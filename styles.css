@@ -7,7 +7,7 @@ body {
 
 #heading {
     text-align: center;
-    margin-top: 100px;
+    margin-top: 3rem;
 }
 
 h1 {
@@ -16,4 +16,30 @@ h1 {
 
 p {
     color: #666;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 1rem;
+  justify-content: center;
+}
+
+.container > div {
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 5rem;
+  margin: 1rem;
+  border-radius: 10px;
+  background-color: #e0e0e0;
+}
+
+.container > div:hover {
+  transform: scale(1.1);
+  box-shadow: black 1px 1px 10px 1px;
+}
+
+main {
+  display: flex;
 }
