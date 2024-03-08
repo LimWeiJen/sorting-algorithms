@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const generateArray = () => {
   const numbers = [];
-  for (let i = 1; i <= 100; i++) numbers.push(i);
+  for (let i = 1; i <= 200; i++) numbers.push(i);
   for (let i = numbers.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i+1));
     [numbers[i], numbers[j]] = [numbers[j], numbers[i]];
@@ -137,11 +137,11 @@ async function mergeSort(arrs) {
             while (index !== start) {
                 arr[index] = arr[index - 1];
                 // Render the array and wait for a delay
-                renderArray(arr);
-                await delay(1);
                 index--;
             }
             arr[start] = value;
+            renderArray(arr);
+            await delay(0.01);
 
             start++;
             mid++;
@@ -308,7 +308,7 @@ async function cocktailShakerSort(arr) {
                 swapped = true;
                 // Render the array and wait for a delay
                 renderArray(arr);
-                await delay(1);
+                await delay(0.01);
             }
         }
         
@@ -326,7 +326,7 @@ async function cocktailShakerSort(arr) {
                 swapped = true;
                 // Render the array and wait for a delay
                 renderArray(arr);
-                await delay(1);
+                await delay(0.01);
             }
         }
 
@@ -338,4 +338,5 @@ async function cocktailShakerSort(arr) {
 array = generateArray();
 window[localStorage.getItem("sort")](array);
 let code = window[localStorage.getItem("sort")].toString();
+$('.title').text(localStorage.getItem("sort").toString().toUpperCase().replace("SORT", " SORT"));
 $('code').text(code);
